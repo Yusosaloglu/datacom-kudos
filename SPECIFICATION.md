@@ -6,6 +6,8 @@
 >
 > **Approval date:** 23 August 2026
 >
+> **Public repository:** <https://github.com/Yusosaloglu/datacom-kudos>
+>
 > This document began as an AI-generated draft based on the manager's original request. It was reviewed and refined before approval and implementation.
 
 ## 1. Original Request

@@ -1,0 +1,518 @@
+:root {
+  --ink: #142220;
+  --muted: #66736f;
+  --cream: #f4f1e9;
+  --paper: #ffffff;
+  --green: #075f50;
+  --green-dark: #03483d;
+  --lime: #d1e96d;
+  --line: #dce2da;
+  --danger: #a13c37;
+  --shadow: 0 18px 48px rgba(20, 34, 32, 0.09);
+  --radius: 16px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+button,
+select,
+textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: wait;
+  opacity: 0.65;
+}
+
+button:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+  outline: 3px solid var(--lime);
+  outline-offset: 3px;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  min-height: 72px;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 max(24px, 6vw);
+  border-bottom: 1px solid rgba(20, 34, 32, 0.1);
+  background: rgba(244, 241, 233, 0.94);
+  backdrop-filter: blur(12px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  color: var(--ink);
+  font-size: 18px;
+  text-decoration: none;
+}
+
+.brand strong {
+  color: var(--green);
+}
+
+.brand-mark {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 9px;
+  background: var(--green);
+  color: white;
+  font-weight: 800;
+}
+
+.account {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.avatar {
+  display: grid;
+  width: 34px;
+  height: 34px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--lime);
+  color: var(--ink);
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.account-name {
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.account-role {
+  display: block;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 500;
+  text-transform: capitalize;
+}
+
+.sign-out-button {
+  padding: 7px;
+  border: 0;
+  background: transparent;
+  color: var(--green);
+  font-weight: 700;
+}
+
+.login-card {
+  max-width: 680px;
+  margin: 10vh auto;
+  padding: 52px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.login-card h1,
+.hero h1 {
+  margin: 0 0 20px;
+  font-family: Georgia, serif;
+  font-size: clamp(42px, 6vw, 72px);
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  line-height: 1.03;
+}
+
+.lead {
+  max-width: 520px;
+  color: var(--muted);
+  font-size: 18px;
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--green);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+}
+
+label {
+  display: block;
+  margin: 20px 0 7px;
+  font-size: 13px;
+  font-weight: 750;
+}
+
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #c9d1c8;
+  border-radius: 9px;
+  background: #fcfcf9;
+  color: var(--ink);
+}
+
+textarea {
+  resize: vertical;
+}
+
+.primary-button,
+.outline-button,
+.text-button {
+  border-radius: 9px;
+  font-weight: 750;
+}
+
+.primary-button {
+  margin-top: 18px;
+  padding: 12px 18px;
+  border: 1px solid var(--green);
+  background: var(--green);
+  color: white;
+}
+
+.primary-button:hover {
+  background: var(--green-dark);
+}
+
+.outline-button {
+  display: block;
+  margin: 22px auto 0;
+  padding: 9px 16px;
+  border: 1px solid var(--green);
+  background: transparent;
+  color: var(--green);
+}
+
+.text-button {
+  padding: 8px;
+  border: 0;
+  background: transparent;
+  color: var(--green);
+}
+
+.small-note {
+  margin: 14px 0 0;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 68px max(24px, 8vw) 58px;
+  background: var(--green);
+  color: white;
+}
+
+.hero::after {
+  position: absolute;
+  top: -130px;
+  right: 6vw;
+  color: rgba(209, 233, 109, 0.13);
+  content: "✦";
+  font-size: 340px;
+}
+
+.hero .eyebrow {
+  color: var(--lime);
+}
+
+.hero h1 {
+  position: relative;
+  z-index: 1;
+  max-width: 760px;
+}
+
+.hero > p:last-child {
+  max-width: 520px;
+  margin: 0;
+  color: #d0e1dc;
+  font-size: 17px;
+}
+
+.page-grid {
+  display: grid;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 54px 24px 90px;
+  grid-template-columns: 360px minmax(0, 1fr);
+  gap: 48px;
+}
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper);
+  box-shadow: var(--shadow);
+}
+
+.composer {
+  position: sticky;
+  top: 96px;
+  padding: 26px;
+}
+
+.composer h2,
+.section-heading h2,
+.admin-panel h2 {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.composer .primary-button {
+  width: 100%;
+}
+
+.form-meta {
+  display: flex;
+  min-height: 26px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+#form-error {
+  color: var(--danger);
+}
+
+.section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+}
+
+.feed {
+  display: grid;
+  gap: 14px;
+}
+
+.kudos-card {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--paper);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.kudos-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow);
+}
+
+.kudos-card-header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.kudos-identity {
+  font-size: 13px;
+  font-weight: 750;
+}
+
+.kudos-recipient {
+  color: var(--green);
+}
+
+.kudos-time {
+  margin-left: auto;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.kudos-message {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.moderation-note {
+  margin: 14px 0 0;
+  color: var(--danger);
+  font-size: 12px;
+}
+
+.card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 16px;
+}
+
+.card-action {
+  padding: 6px 10px;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: var(--paper);
+  color: var(--green);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.card-action:hover {
+  border-color: var(--green);
+}
+
+.card-action.danger {
+  color: var(--danger);
+}
+
+.card-action.danger:hover {
+  border-color: var(--danger);
+}
+
+.feed-state {
+  padding: 44px 24px;
+  border: 1px dashed #b9c4b8;
+  border-radius: 14px;
+  color: var(--muted);
+  text-align: center;
+}
+
+.admin-panel {
+  margin-top: 56px;
+  padding-top: 38px;
+  border-top: 1px solid var(--line);
+}
+
+.admin-panel > h2 {
+  margin-bottom: 22px;
+}
+
+.status-message {
+  position: fixed;
+  right: 24px;
+  bottom: 24px;
+  z-index: 20;
+  max-width: min(380px, calc(100vw - 48px));
+  padding: 13px 18px;
+  border-radius: 10px;
+  background: var(--ink);
+  box-shadow: var(--shadow);
+  color: white;
+}
+
+.moderation-dialog {
+  width: min(500px, calc(100vw - 32px));
+  padding: 30px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--paper);
+  box-shadow: var(--shadow);
+  color: var(--ink);
+}
+
+.moderation-dialog::backdrop {
+  background: rgba(20, 34, 32, 0.62);
+  backdrop-filter: blur(3px);
+}
+
+.moderation-dialog h2 {
+  margin: 0 0 8px;
+  font-family: Georgia, serif;
+  font-size: 30px;
+  font-weight: 500;
+}
+
+.moderation-dialog p:not(.eyebrow) {
+  color: var(--muted);
+}
+
+#moderation-error {
+  color: var(--danger);
+}
+
+.dialog-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 18px;
+}
+
+.dialog-actions .outline-button,
+.dialog-actions .primary-button {
+  display: inline-block;
+  width: auto;
+  margin: 0;
+}
+
+.dialog-actions .danger {
+  border-color: var(--danger);
+  background: var(--danger);
+}
+
+@media (max-width: 800px) {
+  .page-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .composer {
+    position: static;
+  }
+
+  .hero::after {
+    display: none;
+  }
+
+  .kudos-time {
+    display: none;
+  }
+}
+
+@media (max-width: 520px) {
+  .topbar {
+    padding: 0 16px;
+  }
+
+  .account-name {
+    display: none;
+  }
+
+  .login-card {
+    margin: 28px 16px;
+    padding: 30px 22px;
+  }
+
+  .hero {
+    padding: 48px 20px;
+  }
+
+  .page-grid {
+    padding-right: 16px;
+    padding-left: 16px;
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "name": "datacom-kudos",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A spec-driven employee recognition and moderation system",
+  "scripts": {
+    "db:init": "node src/database.js",
+    "start": "node src/server.js",
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  }
+}

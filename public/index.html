@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Datacom Kudos</title>
+    <meta
+      name="description"
+      content="Recognise and celebrate the contributions of your colleagues."
+    >
+    <link rel="stylesheet" href="/styles.css?v=2">
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Datacom Kudos home">
+        <span class="brand-mark">D</span>
+        <span>Datacom <strong>Kudos</strong></span>
+      </a>
+      <div id="account-area"></div>
+    </header>
+
+    <main>
+      <!-- Local identity selection stands in for company SSO. -->
+      <section id="login-view" class="login-card" aria-labelledby="login-heading">
+        <p class="eyebrow">Employee portal</p>
+        <h1 id="login-heading">Make someone&rsquo;s day.</h1>
+        <p class="lead">
+          Celebrate the people who make work better, one thoughtful note at a
+          time.
+        </p>
+
+        <label for="login-user">Continue as</label>
+        <select id="login-user">
+          <option value="1">Avery Chen</option>
+          <option value="2">Jordan Patel</option>
+          <option value="3">Sam Williams</option>
+          <option value="4">Morgan Lee — Administrator</option>
+        </select>
+        <button id="login-button" class="primary-button" type="button">
+          Enter Kudos
+        </button>
+        <p class="small-note">Demonstration access only. Production uses company SSO.</p>
+      </section>
+
+      <!-- Hidden until the browser confirms an authenticated session. -->
+      <div id="application-view" hidden>
+        <section class="hero" aria-labelledby="page-heading">
+          <p class="eyebrow">Recognition that matters</p>
+          <h1 id="page-heading">Good work deserves to be seen.</h1>
+          <p>
+            Send a note of appreciation and share the impact your colleagues
+            make.
+          </p>
+        </section>
+
+        <div class="page-grid">
+          <aside aria-labelledby="composer-heading">
+            <form id="kudos-form" class="card composer">
+              <h2 id="composer-heading">Give kudos</h2>
+
+              <label for="recipient">Who made an impact?</label>
+              <select id="recipient" name="recipientId" required>
+                <option value="">Choose a colleague</option>
+              </select>
+
+              <label for="message">What did they do?</label>
+              <textarea
+                id="message"
+                name="message"
+                minlength="3"
+                maxlength="500"
+                rows="6"
+                required
+              ></textarea>
+
+              <div class="form-meta">
+                <span id="form-error" role="alert"></span>
+                <span><output id="character-count">0</output>/500</span>
+              </div>
+
+              <button class="primary-button" type="submit">Send kudos</button>
+            </form>
+          </aside>
+
+          <section class="feed-section" aria-labelledby="feed-heading">
+            <div class="section-heading">
+              <h2 id="feed-heading">Latest kudos</h2>
+              <button id="refresh-feed" class="text-button" type="button">
+                Refresh
+              </button>
+            </div>
+
+            <div id="public-feed" class="feed" aria-live="polite"></div>
+            <button id="load-more" class="outline-button" type="button" hidden>
+              Load more
+            </button>
+
+            <!-- Browser logic reveals this only for an administrator. -->
+            <section
+              id="admin-panel"
+              class="admin-panel"
+              aria-labelledby="admin-heading"
+              hidden
+            >
+              <h2 id="admin-heading">Hidden kudos</h2>
+              <div id="hidden-feed" class="feed"></div>
+            </section>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <div
+      id="status-message"
+      class="status-message"
+      role="status"
+      aria-live="polite"
+      hidden
+    ></div>
+
+    <dialog id="moderation-dialog" class="moderation-dialog">
+      <form id="moderation-form">
+        <p class="eyebrow">Administrator action</p>
+        <h2 id="moderation-title">Moderate kudos</h2>
+        <p id="moderation-description"></p>
+
+        <label for="moderation-reason">Reason</label>
+        <textarea
+          id="moderation-reason"
+          minlength="3"
+          maxlength="200"
+          rows="4"
+          required
+        ></textarea>
+        <div class="form-meta">
+          <span id="moderation-error" role="alert"></span>
+          <span><output id="moderation-count">0</output>/200</span>
+        </div>
+
+        <div class="dialog-actions">
+          <button id="cancel-moderation" class="outline-button" type="button">
+            Cancel
+          </button>
+          <button id="confirm-moderation" class="primary-button" type="submit">
+            Confirm
+          </button>
+        </div>
+      </form>
+    </dialog>
+    <script src="/app.js?v=2" defer></script>
+  </body>
+</html>

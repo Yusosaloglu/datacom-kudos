@@ -1,0 +1,10 @@
+# Runtime database files are generated locally and should not be committed.
+data/
+*.db
+*.db-shm
+*.db-wal
+
+# Operating-system and test artefacts.
+.DS_Store
+coverage/
+node_modules/
